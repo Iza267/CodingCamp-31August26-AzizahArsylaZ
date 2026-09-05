@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List Life Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 id="greeting" class="editable-greeting" title="Double-click to edit your name">Good Morning</h1>
+            <p id="current-time" class="clock-display"></p>
+            <p id="current-date" class="date-display"></p>
+            
+            <!-- Theme Toggle -->
+            <div class="theme-toggle">
+                <button id="theme-bright" class="theme-btn" data-theme="bright" aria-label="Bright Mode">
+                    <span class="theme-icon">??</span>
+                </button>
+                <button id="theme-dark" class="theme-btn" data-theme="dark" aria-label="Dark Mode">
+                    <span class="theme-icon">??</span>
+                </button>
+                <button id="theme-neutral" class="theme-btn" data-theme="neutral" aria-label="Neutral Mode">
+                    <span class="theme-icon">?</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Focus Timer Section -->
+        <section class="card timer-section">
+            <h2 class="card-title">Focus Timer</h2>
+            <div class="timer-duration-select">
+                <label for="timer-duration">Duration:</label>
+                <select id="timer-duration" class="timer-dropdown">
+                    <option value="15">15 min</option>
+                    <option value="25" selected>25 min</option>
+                    <option value="45">45 min</option>
+                    <option value="60">60 min</option>
+                </select>
+            </div>
+            <div class="timer-display">
+                <span id="timer">25:00</span>
+            </div>
+            <div class="timer-controls">
+                <button id="start-btn" class="btn btn-primary">Start</button>
+                <button id="stop-btn" class="btn btn-secondary">Stop</button>
+                <button id="reset-btn" class="btn btn-danger">Reset</button>
+            </div>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section class="card todo-section">
+            <h2 class="card-title">To-Do List</h2>
+            <div class="add-task">
+                <input type="text" id="task-input" placeholder="Enter a new task..." maxlength="500">
+                <button id="add-task-btn" class="btn btn-primary">Add Task</button>
+            </div>
+            <ul id="task-list" class="task-list"></ul>
+            <p id="empty-tasks" class="empty-message" style="display: none;">No tasks yet. Add your first task above!</p>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section class="card quick-links-section">
+            <h2 class="card-title">Quick Links</h2>
+            <div class="add-link">
+                <input type="text" id="link-url" placeholder="Website URL" maxlength="500">
+                <input type="text" id="link-label" placeholder="Link Label" maxlength="100">
+                <button id="add-link-btn" class="btn btn-primary">Add Link</button>
+            </div>
+            <div id="quick-links" class="quick-links-grid"></div>
+            <p id="empty-links" class="empty-message" style="display: none;">No quick links yet. Add your first link above!</p>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
